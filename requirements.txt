@@ -29,14 +29,6 @@ opt-einsum
 pathy
 preshed
 psycopg2-binary
-py-openaq
-pyasn1
-pyasn1-modules
-pyparsing
-PySocks
-python-dateutil
-python-dotenv
-python-editor
 requests
 requests-oauthlib
 rsa
@@ -47,12 +39,4 @@ smart-open
 SQLAlchemy
 srsly
 termcolor
-thinc
-threadpoolctl
-typer
-typing-extensions
-urllib3
 uvicorn
-wasabi
-Werkzeug
-wrapt
