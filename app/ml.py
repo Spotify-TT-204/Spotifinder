@@ -6,17 +6,16 @@ import pandas as pd
 from pydantic import BaseModel, Field, validator
 import joblib
 import pickle
-from tfidf import df
-from tfidf import dtm
 from os.path import dirname
-from tfidf import spotify_songs
 from sklearn.feature_extraction.text import TfidfVectorizer
-from tqdm.notebook import tqdm
+
 DIR = dirname(__file__)
 MODELS_DIR = DIR + '/../models/'
 
 log = logging.getLogger(__name__)
 router = APIRouter()
+
+df = pd.read_csv('NLP_songs_data.csv.zip')
 
 model_filename = MODELS_DIR + 'nlp_model.pkl'
 dtm_filename = MODELS_DIR + 'nlp_dtm.pkl'
