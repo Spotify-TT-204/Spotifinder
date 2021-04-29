@@ -25,7 +25,6 @@ kiwisolver
 Mako
 Markdown
 MarkupSafe
-matplotlib
 murmurhash
 numpy
 oauthlib
