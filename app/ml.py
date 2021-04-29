@@ -19,7 +19,9 @@ log = logging.getLogger(__name__)
 router = APIRouter()
 
 model_filename = MODELS_DIR + 'nlp_model.pkl'
+dtm_filename = MODELS_DIR + 'nlp_dtm.pkl'
 loaded_model = pickle.load(open(model_filename, 'rb'))
+dtm = pickle.load(open(dtm_filename, 'rb'))
 
 class Item(BaseModel):
     """Use this data model to parse the request body JSON."""
