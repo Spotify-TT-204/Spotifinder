@@ -32,6 +32,7 @@ murmurhash
 numpy
 oauthlib
 opt-einsum
+pandas
 pathy
 Pillow
 preshed
