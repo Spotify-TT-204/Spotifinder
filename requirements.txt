@@ -12,9 +12,6 @@ cymem
 fastapi
 flatbuffers
 gast
-google-auth
-google-auth-oauthlib
-google-pasta
 greenlet
 idna
 itsdangerous
