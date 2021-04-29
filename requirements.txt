@@ -27,7 +27,6 @@ numpy
 oauthlib
 opt-einsum
 pathy
-Pillow
 preshed
 psycopg2-binary
 py-openaq
