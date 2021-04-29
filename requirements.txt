@@ -32,7 +32,6 @@ opt-einsum
 pathy
 Pillow
 preshed
-protobuf
 psycopg2-binary
 py-openaq
 pyasn1
@@ -54,8 +53,6 @@ srsly
 termcolor
 thinc
 threadpoolctl
-tqdm
-tweepy
 typer
 typing-extensions
 urllib3
