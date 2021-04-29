@@ -9,9 +9,7 @@ chardet
 click
 cycler
 cymem
-Flask
-Flask-Migrate
-Flask-SQLAlchemy
+fastapi
 flatbuffers
 gast
 google-auth
@@ -19,7 +17,6 @@ google-auth-oauthlib
 google-pasta
 greenlet
 grpcio
-gunicorn
 h5py
 idna
 itsdangerous
@@ -66,6 +63,7 @@ tweepy
 typer
 typing-extensions
 urllib3
+uvicorn
 wasabi
 Werkzeug
 wrapt
