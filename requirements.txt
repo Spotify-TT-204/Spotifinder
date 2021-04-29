@@ -17,11 +17,7 @@ idna
 itsdangerous
 Jinja2
 joblib
-Keras-Preprocessing
 kiwisolver
-Mako
-Markdown
-MarkupSafe
 murmurhash
 numpy
 oauthlib
@@ -38,5 +34,4 @@ six
 smart-open
 SQLAlchemy
 srsly
-termcolor
 uvicorn
