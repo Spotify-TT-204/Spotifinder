@@ -9,20 +9,29 @@ import pickle
 from os.path import dirname
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-DIR = dirname(__file__)
-MODELS_DIR = DIR + '/../models/'
-DATA_DIR = DIR + '/../data/'
+
 
 log = logging.getLogger(__name__)
 router = APIRouter()
 
-data_filename = DATA_DIR + 'NLP_songs_data.zip'
-df = pd.read_csv(data_filename)
+DIR = dirname(__file__)
+MODELS_DIR = DIR + '/../models/'
+DATA_DIR = DIR + '/../data/'
 
+data_filename = DATA_DIR + 'NLP_songs_data.zip'
 model_filename = MODELS_DIR + 'nlp_model.pkl'
 dtm_filename = MODELS_DIR + 'nlp_dtm.pkl'
-loaded_model = pickle.load(open(model_filename, 'rb'))
-dtm = pickle.load(open(dtm_filename, 'rb'))
+
+df = None
+loaded_model = None
+dtm = None
+
+def load_files():
+    global df, loaded_model, dtm
+
+    df = pd.read_csv(data_filename)
+    loaded_model = pickle.load(open(model_filename, 'rb'))
+    dtm = pickle.load(open(dtm_filename, 'rb'))
 
 class Item(BaseModel):
     """Use this data model to parse the request body JSON."""
@@ -44,12 +53,15 @@ class Item(BaseModel):
 
 @router.post('/predict')
 async def predict(artist, song):
+    if dtm is None:
+        load_files()
     #translate artist, song into doc dtm.iloc[x].values
     artist_songs = df.loc[df['track_artist'] == artist]
     selected_song = artist_songs.loc[artist_songs['track_name'] == song]
     x = selected_song.index
     x = x[0]
     x = x.item()
+    
     doc = dtm.loc[x].values
     result = loaded_model.kneighbors([doc], n_neighbors=6)
 
