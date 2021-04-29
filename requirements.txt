@@ -35,6 +35,7 @@ opt-einsum
 pandas
 pathy
 Pillow
+plotly
 preshed
 protobuf
 psycopg2-binary
