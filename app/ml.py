@@ -11,11 +11,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 DIR = dirname(__file__)
 MODELS_DIR = DIR + '/../models/'
+DATA_DIR = DIR + '/../data/'
 
 log = logging.getLogger(__name__)
 router = APIRouter()
 
-df = pd.read_csv('NLP_songs_data.csv.zip')
+data_filename = DATA_DIR + 'NLP_songs_data.zip'
+df = pd.read_csv(data_filename)
 
 model_filename = MODELS_DIR + 'nlp_model.pkl'
 dtm_filename = MODELS_DIR + 'nlp_dtm.pkl'
